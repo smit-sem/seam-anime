@@ -1,0 +1,274 @@
+/* Reset and Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 100px;
+  }
+  
+  /* ✨ Glassy Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    margin: 20px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 80px);
+    z-index: 999;
+    animation: fadeSlideDown 1s ease-in-out;
+  }
+  
+  /* 💡 Logo */
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    background: linear-gradient(90deg, #ff4d6d, #5f9cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* 🌈 Nav Links */
+  .nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+  }
+  .nav-links li a {
+    color: hsl(0, 95%, 47%);
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+  }
+  .nav-links li a:hover {
+    color: #00d9ff;
+  }
+  .nav-links li a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #ff4d6d, #5f9cff);
+    transition: width 0.3s ease-in-out;
+  }
+  .nav-links li a:hover::after {
+    width: 100%;
+  }
+  .nav-btns .btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #ff4d6d, #5f9cff);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 77, 109, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .nav-btns .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(95, 156, 255, 0.6);
+  }
+  
+  /* 🧃 Products Title */
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 80px auto 30px;
+    color: #1a1a1a;
+    text-align: center;
+    background: linear-gradient(to right, #ff4d6d, #5f9cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  /* 📦 Grid */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    margin-top: 30px;
+  }
+  
+  /* 🧊 Product Cards */
+  .product-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 40px 100px rgba(233, 27, 27, 0.05);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 0, 0, 0.05);
+    text-align: center;
+    color: #222;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideFadeUp 0.8s ease forwards;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .product-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 20px rgba(95, 156, 255, 0.2);
+  }
+  
+  /* 🎯 Card Delays */
+  .product-card:nth-child(1) { animation-delay: 0.2s; }
+  .product-card:nth-child(2) { animation-delay: 0.4s; }
+  .product-card:nth-child(3) { animation-delay: 0.6s; }
+  .product-card:nth-child(4) { animation-delay: 0.8s; }
+  
+  /* 📷 Image */
+  .product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* 📝 Info */
+  .product-info {
+    margin-top: 20px;
+  }
+  .product-info h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: linear-gradient(to right, #ff4d6d, #5f9cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInUp 0.5s ease forwards;
+  }
+  .product-info p {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 8px 0;
+    animation: fadeInUp 0.5s ease forwards;
+  }
+  .product-info .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #00d9ff;
+    margin-top: 10px;
+  }
+  
+/***********************************/
+  .buy-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    margin-top: 15px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #ff4d6d, #5f9cff);
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(95, 156, 255, 0.3);
+  }
+  
+  .buy-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(95, 156, 255, 0.6), 0 0 20px rgba(255, 77, 109, 0.4);
+  }
+  
+  /* Optional glow animation */
+  .buy-btn::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+    z-index: 0;
+  }
+  
+  .buy-btn:hover::before {
+    top: -30%;
+    left: -30%;
+    opacity: 1;
+  }
+  .buy-btn span {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* 🌀 Animations */
+  @keyframes slideFadeUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* 📱 Responsive */
+  @media (max-width: 768px){
+    .navbar {
+      flex-direction: column;
+      gap: 10px;
+      padding: 15px;
+    }
+    .nav-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  @keyframes fadeSlideDown {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -20px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 0px);
+    }
+  }
+  
